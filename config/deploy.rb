@@ -1,5 +1,5 @@
 
-set :application, "#{raise "Set up your application name in config/deploy.rb"}"
+set :application, "portfolio"
 
 set :domain,      "makevoid.com"
 
@@ -7,8 +7,8 @@ set :domain,      "makevoid.com"
 
 # #set :repository,  "svn://#{domain}/svn/#{application}"
 # #default_run_options[:pty] = true  # Must be set for the password prompt from git to work
-# set :repository, "git://github.com/makevoid/#{application}.git"  # public
-set :repository, "ssh+git://git@makevoid.com/git/#{application}"  # private @makevoid.com
+set :repository, "git://github.com/emanuelep/#{application}.git"  # public
+# set :repository, "ssh+git://git@makevoid.com/git/#{application}"  # private @makevoid.com
 
 set :scm, "git"
 set :branch, "master"

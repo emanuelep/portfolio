@@ -32,12 +32,37 @@ class App < Sinatra::Base
     haml :home
   end
 
+
+  get "/users" do
+    haml :users
+  end
+
   get "/contacts" do
     haml :contacts
   end
 
   get '/css/main.css' do
     sass :main
+  end
+  
+  
+  post "/login" do
+
+    user = User.first( name: params[:username] )
+    if user
+      if user.password == params[:password]      
+        # settare la sessione
+        redirect "/login_effettuato"
+      end
+    end
+    
+  end
+  
+  configure :development do
+    get "/migrate"do
+      DataMapper.auto_migrate!
+      "migrated! <a href='/'>go back home</a>"
+    end
   end
   
 end

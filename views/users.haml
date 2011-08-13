@@ -1,0 +1,14 @@
+#users
+  - User.all.each do |user|
+    %p
+      id:
+      = user.id
+    %p
+      login:
+      = user.login
+    %p
+      password:
+      = user.password
+    %p
+      \-----------------------------
+  
